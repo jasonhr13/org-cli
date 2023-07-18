@@ -2,14 +2,14 @@
 
 if [[ "$(uname -m)" = "arm64" ]]
 then
-  echo 'Downloading fuzzy-cli(arm64)'
-  curl -s -o /tmp/fuzzy-cli https://fuzzy-cli.s3.us-west-2.amazonaws.com/arm64/fuzzy-cli
+  echo 'Downloading org-cli(arm64)'
+  curl -s -o /tmp/org-cli S3_LOCATION
 else
-  echo 'Downloading fuzzy-cli(x86_64)'
-  curl -s -o /tmp/fuzzy-cli https://fuzzy-cli.s3.us-west-2.amazonaws.com/x86_64/fuzzy-cli
+  echo 'Downloading org-cli(x86_64)'
+  curl -s -o /tmp/org-cli S3_LOCATION
 fi
 
 echo 'Download complete. Installing...'
-sudo mv /tmp/fuzzy-cli /usr/local/bin/.
-sudo chmod 755 /usr/local/bin/fuzzy-cli
+sudo mv /tmp/org-cli /usr/local/bin/.
+sudo chmod 755 /usr/local/bin/org-cli
 echo 'Install complete'
